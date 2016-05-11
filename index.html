@@ -30,8 +30,10 @@
         var eventName = eventSelect.MPEventSelect('value'),
             propName  = propSelect.MPPropertySelect('value'),
             dateRange = dateSelect.MPDatepicker('value');
+            MP.api.funnel('Foo')
 
         if (eventName) {
+          
           MP.api.segment(eventName, propName, dateRange).done(function(results) {
             eventGraph.MPChart('setData', results);
             eventTable.MPTable('setData', results);
